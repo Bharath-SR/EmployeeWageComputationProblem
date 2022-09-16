@@ -12,35 +12,42 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC4: Solving Using Switch Case Statement
+	 * UC5: Calculating Wages For a Month (days =20)
 	 */
 	public static void main(String[] args) {
 		// Driving Class
 		
 		Random random = new Random();
-		int attendance = random.nextInt(3);
+		
 
 		int wagePerHour = 20;
 		int fullDayHour = 8;
 		int wagePerDay = 0;
 		int partTimeHours = 4;
+		int monthlySalary = 0;
 		
-		switch(attendance){
-		case 0:
-			System.out.println("Employee is Absent");
-		break;
-		case 1:
-			System.out.println("Employee is Present Part Time");
-			wagePerDay = wagePerHour * partTimeHours;
-		break;
-		case 2:
-			System.out.println("Employee is Present Full Day");
-			wagePerDay = wagePerHour * fullDayHour;
-		break;
+
+		for (int days = 1; days <= 20; days++) {
+			int attendance = random.nextInt(3);
+			wagePerDay =0;
+			switch (attendance) {
+
+			case 0:
+				System.out.println("Employee Absent");
+				break;
+
+			case 1:
+				System.out.println("Employee is Present PartTime");
+				wagePerDay = partTimeHours * wagePerHour;
+				break;
+			case 2:
+				System.out.println("Employee is Present Full Time");
+				wagePerDay = wagePerHour * fullDayHour;
+				break;
+			}
+
+			monthlySalary = monthlySalary + wagePerDay;
+			System.out.println(days+ " : " + monthlySalary);
 		}
-		System.out.println("Employee Wage Per Day is :" + wagePerDay);
-
-		
-	}
-
+}
 }
