@@ -44,7 +44,6 @@ public class EmployeeWageComputation {
 					monthlyHour = monthlyHour + fullDayHour;
 					break;
 				}
-
 				monthlySalary = monthlySalary + wagePerDay;
 				System.out.println("Days: " + days + " :MonthlyHoursOfEmployee: " + monthlyHour + ": Monthly Salary Of Employee: " + monthlySalary);
 			}
