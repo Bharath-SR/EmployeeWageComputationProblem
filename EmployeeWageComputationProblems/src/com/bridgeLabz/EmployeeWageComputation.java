@@ -12,7 +12,7 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC2: Calculate Daily Employee Wage
+	 * UC3: Add PartTime Employee and Wage
 	 */
 	public static void main(String[] args) {
 		// Driving Class
@@ -23,8 +23,13 @@ public class EmployeeWageComputation {
 		int wagePerHour = 20;
 		int fullDayHour = 8;
 		int wagePerDay = 0;
-
-		if (attendance == 2) {
+		int partTimeHours = 4;
+		
+		if(attendance == 1) {
+			System.out.println("Employee is Present Part Time");
+			wagePerDay = wagePerHour * partTimeHours;
+		}
+		else if (attendance == 2) {
 			System.out.println("Employee is Present Full Day");
 			wagePerDay = wagePerHour * fullDayHour;
 		}
