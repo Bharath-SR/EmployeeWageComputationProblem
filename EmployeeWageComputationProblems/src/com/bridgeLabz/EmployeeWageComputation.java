@@ -12,7 +12,7 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC11: Employee Wage of Multiple Companies using Interface Approach
+	 * UC12: Refactor to have list of multiple companies to manage employee wage
 	 */
 	public interface ComputeEmpWage {
 		public void addEmployeeWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHourPerMonth);
@@ -84,6 +84,7 @@ public class EmployeeWageComputation {
 		ComputeEmpWage emp = new EmpBuilder();
 		emp.addEmployeeWage("Company A",15,22,220);
 		emp.addEmployeeWage("Company B",20,20,200);
-		emp.computeCompanyWage();
+		emp.addEmployeeWage("Company C",19,23,300);
+        emp.computeCompanyWage();
  }
 }
