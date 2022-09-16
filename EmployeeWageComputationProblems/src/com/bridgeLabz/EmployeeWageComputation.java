@@ -30,7 +30,7 @@ public class EmployeeWageComputation {
 
 				days++;
 
-				int attendance = random.nextInt(3); // Generate 3 random number 0,1,2
+				int attendance = random.nextInt(3); 
 				wagePerDay = 0;
 				switch (attendance) {
 
