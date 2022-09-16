@@ -3,6 +3,8 @@
  */
 package com.bridgeLabz;
 
+import java.util.Random;
+
 /**
  * @author Admin
  *
@@ -10,10 +12,22 @@ package com.bridgeLabz;
 public class EmployeeWageComputation {
 
 	/**
-	 * Welcome To Employee Wage Computation Program On Master Branch
+	 * UC1: Check Employee is Present or Absent (Using Random Function)
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Driving Class
+		
+		Random random = new Random();
+		int attendance = random.nextInt(2); 
+
+		if (attendance == 1) {
+			System.out.println("Employee is Present");
+			
+		}
+		 else {
+			System.out.println("Employee is Absent");
+
+		}
 
 	}
 
