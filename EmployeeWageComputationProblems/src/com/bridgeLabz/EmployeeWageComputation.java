@@ -14,9 +14,8 @@ public class EmployeeWageComputation {
 	/**
 	 * UC6: Calculating Wages till a Condtion of total working hours or days is reached
 	 */
-	static Random random = new Random();
-
-	 int wagePerHour = 20;
+	 Random random = new Random();
+     int wagePerHour = 20;
      int fullDayHour = 8;
 	 int partTimeHours = 4;
 	 int wagePerDay = 0;
@@ -27,17 +26,14 @@ public class EmployeeWageComputation {
 	public void EmployeeWage() {
 		{
 			while (monthlyHour <= 100 || days <= 20) {
-
-				days++;
-
-				int attendance = random.nextInt(3); 
+                days++;
+                int attendance = random.nextInt(3); 
 				wagePerDay = 0;
 				switch (attendance) {
                 case 0:
 					System.out.println("Employee Absent");
 					break;
-
-				case 1:
+                case 1:
 					System.out.println("Employee Part Time Present");
 					wagePerDay = partTimeHours * wagePerHour;
 					monthlyHour = monthlyHour + partTimeHours;
