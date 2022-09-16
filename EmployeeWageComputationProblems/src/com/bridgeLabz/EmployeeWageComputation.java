@@ -12,7 +12,7 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC6: Calculating Wages till a Condtion of total working hours or days is reached
+	 * UC7: Refactored wsing Object and method
 	 */
 	 Random random = new Random();
      int wagePerHour = 20;
