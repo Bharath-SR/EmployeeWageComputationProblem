@@ -12,42 +12,55 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC5: Calculating Wages For a Month (days =20)
+	 * UC6: Calculating Wages till a Condtion of total working hours or days is reached
 	 */
-	public static void main(String[] args) {
-		// Driving Class
-		
-		Random random = new Random();
-		
+	static Random random = new Random();
 
-		int wagePerHour = 20;
-		int fullDayHour = 8;
-		int wagePerDay = 0;
-		int partTimeHours = 4;
-		int monthlySalary = 0;
-		
+	 int wagePerHour = 20;
+     int fullDayHour = 8;
+	 int partTimeHours = 4;
+	 int wagePerDay = 0;
+	 int monthlySalary = 0;
+	 int monthlyHour = 0;
+	 int days = 0;
 
-		for (int days = 1; days <= 20; days++) {
-			int attendance = random.nextInt(3);
-			wagePerDay =0;
-			switch (attendance) {
+	public void EmployeeWage() {
+		{
+			while (monthlyHour <= 100 || days <= 20) {
 
-			case 0:
-				System.out.println("Employee Absent");
-				break;
+				days++;
 
-			case 1:
-				System.out.println("Employee is Present PartTime");
-				wagePerDay = partTimeHours * wagePerHour;
-				break;
-			case 2:
-				System.out.println("Employee is Present Full Time");
-				wagePerDay = wagePerHour * fullDayHour;
-				break;
+				int attendance = random.nextInt(3); 
+				wagePerDay = 0;
+				switch (attendance) {
+
+				case 0:
+					System.out.println("Employee Absent");
+					break;
+
+				case 1:
+					System.out.println("Employee Part Time Present");
+					wagePerDay = partTimeHours * wagePerHour;
+					monthlyHour = monthlyHour + partTimeHours;
+					break;
+				default:
+					System.out.println("Employee Full Day Present..");
+					wagePerDay = wagePerHour * fullDayHour;
+					monthlyHour = monthlyHour + fullDayHour;
+					break;
+				}
+
+				monthlySalary = monthlySalary + wagePerDay;
+				System.out.println("Days: " + days + " :MonthlyHoursOfEmployee: " + monthlyHour + ": Monthly Salary Of Employee: " + monthlySalary);
 			}
-
-			monthlySalary = monthlySalary + wagePerDay;
-			System.out.println(days+ " : " + monthlySalary);
 		}
-}
+	}
+
+	public static void main(String[] args) {
+		EmployeeWageComputation empwage =new EmployeeWageComputation();
+		empwage.EmployeeWage();
+
+
+
+	}
 }
