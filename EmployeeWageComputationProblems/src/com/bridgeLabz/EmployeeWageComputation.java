@@ -33,8 +33,7 @@ public class EmployeeWageComputation {
 				int attendance = random.nextInt(3); 
 				wagePerDay = 0;
 				switch (attendance) {
-
-				case 0:
+                case 0:
 					System.out.println("Employee Absent");
 					break;
 
@@ -43,7 +42,7 @@ public class EmployeeWageComputation {
 					wagePerDay = partTimeHours * wagePerHour;
 					monthlyHour = monthlyHour + partTimeHours;
 					break;
-				default:
+				case 2:
 					System.out.println("Employee Full Day Present..");
 					wagePerDay = wagePerHour * fullDayHour;
 					monthlyHour = monthlyHour + fullDayHour;
@@ -59,8 +58,5 @@ public class EmployeeWageComputation {
 	public static void main(String[] args) {
 		EmployeeWageComputation empwage =new EmployeeWageComputation();
 		empwage.EmployeeWage();
-
-
-
-	}
+}
 }
