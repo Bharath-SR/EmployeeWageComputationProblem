@@ -12,7 +12,7 @@ import java.util.Random;
 public class EmployeeWageComputation {
 
 	/**
-	 * UC3: Add PartTime Employee and Wage
+	 * UC4: Solving Using Switch Case Statement
 	 */
 	public static void main(String[] args) {
 		// Driving Class
@@ -25,18 +25,22 @@ public class EmployeeWageComputation {
 		int wagePerDay = 0;
 		int partTimeHours = 4;
 		
-		if(attendance == 1) {
+		switch(attendance){
+		case 0:
+			System.out.println("Employee is Absent");
+		break;
+		case 1:
 			System.out.println("Employee is Present Part Time");
 			wagePerDay = wagePerHour * partTimeHours;
-		}
-		else if (attendance == 2) {
+		break;
+		case 2:
 			System.out.println("Employee is Present Full Day");
 			wagePerDay = wagePerHour * fullDayHour;
+		break;
 		}
-		 else
-			System.out.println("Employee is Absent");
-
 		System.out.println("Employee Wage Per Day is :" + wagePerDay);
+
+		
 	}
 
 }
